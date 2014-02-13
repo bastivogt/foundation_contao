@@ -1,0 +1,19 @@
+.invisible {
+  display: inline;
+  height: 0;
+  left: -1000px;
+  overflow: hidden;
+  position: absolute;
+  top: -1000px;
+  width: 0;
+}
+textarea {
+  min-height: 130px;
+}
+.captcha_text {
+  margin-bottom: 1rem;
+  display: block;
+}
+span.mandatory {
+  color: #EA2D10;
+}

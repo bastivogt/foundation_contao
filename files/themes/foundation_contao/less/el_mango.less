@@ -1,0 +1,111 @@
+
+
+.border-radius(@val: 6px 6px 6px 6px) {
+  -webkit-border-radius: @val;
+  -moz-border-radius: @val;
+  -o-border-radius: @val;
+  -khtml-border-radius: @val;
+  border-radius: @val;
+}
+
+.transition(...) {
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  -o-transition: @arguments;
+  -kthml-transition: @arguments;
+  transition: @arguments;
+}
+
+.box-shadow(@val: 0px 0px 20px 0 rgba(0, 0, 0, .4)) {
+  -webkit-box-shadow: @val;
+  -moz-box-shadow: @val;
+  -khtml-box-shadow: @val;
+  box-shadow: @val;
+}
+
+.transform(...) {
+  -webkit-transform: @arguments;
+  -moz-transform: @arguments;
+  -o-transform: @arguments;
+  transform: @arguments;
+}
+
+
+
+.gradient-vertical(@startColor: #d9d9d9, @startLocation: 0%, @endColor: #f4f4f4, @endLocation: 100%) {
+  background: @startColor;
+  background: -moz-linear-gradient(top, @startColor @startLocation, @endColor @endLocation);
+  background: -webkit-gradient(linear, left-top, left-bottom, color-stop(@startLocation, @startColor), color-stop(@endLocation, @endColor));
+  background: -webkit-linear-gradient(top, @startColor @startLocation, @endColor @endLocation);
+  backgroudn: -ms-linear-gradient(top, @startColor @startLocation, @endColor @endLocation);
+  background: linear-gradient(to bottom, @startColor @startLocation, @endColor @endLocation);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="@{startColor}", endColorstr="@{endColor}",GradientType=0);
+}
+
+.gradient-horizontal(@startColor: #d9d9d9, @startLocation: 0%, @endColor: #f4f4f4, @endLocation: 100%) {
+  background: @startColor;
+  background: -moz-linear-gradient(left, @startColor, @startLocation, @endLocation);
+  background: -webkit-gradient(linear, left top, right top,color-stop(@startLocation, @startColor), color-stop(@endLocation, @endColor));
+  background: -webkit-linear-gradient(left, @startColor @startLocation, @endColor @endLocation);
+  background: -o-linear-gradient(left, @startColor @startLocation, @endColor @endLocation);
+  background: -ms-linear-gradient(left, @startColor @startLocation, @endColor @endLocation);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="@{startColor}", endColorstr="@{endColor}",GradientType=1);
+}
+
+.gradient-radial(@startColor: #d9d9d9, @startLocation: 0%, @endColor: #f4f4f4, @endLocation: 100%) {
+  background: @startColor;
+  background: -moz-radial-gradient(center, ellipse cover, @startColor @startLocation, @endColor @endLocation);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(@startLocation, @startColor), color-stop(@endLocation, @endColor));
+  background: -webkit-radial-gradient(center, ellipse cover, @startColor @startLocation, @endColor @endLocation);
+  background: -o-radial-gradient(center, ellipse cover, @startColor @startLocation, @endColor @endLocation);
+  background: -ms-radial-gradient(center, ellipse cover, @startColor @startLocation, @endColor @endLocation);
+  background: radial-gradient(ellipse at center, @startColor @startLocation, @endColor @endLocation);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#@{startColor}", endColorstr="#@{endColor}",GradientType=1); /* IE6-9 fallback on horizontal gradient */
+}
+
+.gradient-diagonal-top-left(@startColor: #d9d9d9, @startLocation: 0%, @endColor: #f4f4f4, @endLocation: 100%) {
+  background: @startColor;
+  background: -moz-linear-gradient(-45deg,  @startColor @startLocation, @endColor @endLocation);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(@startLocation, @startColor), color-stop(@endLocation, @endColor));
+  background: -webkit-linear-gradient(-45deg,  @startColor @startLocation, @endColor @endLocation);
+  background: -o-linear-gradient(-45deg,  @startColor @startLocation, @endColor @endLocation);
+  background: -ms-linear-gradient(-45deg,  @startColor @startLocation, @startColor @endColor);
+  background: linear-gradient(135deg,  @startColor @startLocation, @endColor @endLocation);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#@{startColor}", endColorstr="#@{endColor}",GradientType=1); /* IE6-9 fallback on horizontal gradient */
+}
+
+.gradient-diagonal-bottom-left(@startColor: #d9d9d9, @startLocation: 0%, @endColor: #f4f4f4, @endLocation: 100%) {
+  background: @startColor;
+  background: -moz-linear-gradient(45deg,  @startColor @startLocation, @endColor @endLocation);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(@startLocation, @startColor), color-stop(@endLocation, @endColor));
+  background: -webkit-linear-gradient(45deg,  @startColor @startLocation, @endColor @endLocation);
+  background: -o-linear-gradient(45deg,  @startColor @startLocation, @endColor @endLocation);
+  background: -ms-linear-gradient(45deg,  @startColor @startLocation, @startColor @endColor);
+  background: linear-gradient(45deg,  @startColor @startLocation, @endColor @endLocation);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#@{startColor}", endColorstr="#@{endColor}",GradientType=1); /* IE6-9 fallback on horizontal gradient */
+}
+
+.box-sizing(@val: content-box) {
+  -webkit-box-sizing: @val;
+  -moz-box-sizing: @val;
+  -ms-box-sizing: @val;
+  box-sizing: @val;
+}
+
+.reset-mobile-outline() {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  outline: none !important;
+}
+
+.filter(@val) {
+  -webkit-filter: @val;
+  -moz-filter: @val;
+  -o-filter: @val;
+  -ms-filter: @val;
+  filter: @val;
+}
+
+.filter-svg(@val) {
+  filter: @val;
+}

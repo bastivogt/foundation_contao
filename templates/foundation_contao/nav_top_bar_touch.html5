@@ -1,0 +1,40 @@
+<?php if ($this->level == 'level_1'): ?>
+<div class="fixed contain-to-grid">
+<div class="top-bar" data-topbar data-options="is_hover:true; custom_back_text: true; back_text: zurück">
+
+    <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+            <h1><a href="{{link_url::1}}">{{page::rootTitle}} </a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <!-- <li class="toggle-topbar menu-icon"><a href="#"><span>Menü</span></a></li> -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    </ul>
+
+    <?php endif; ?>
+
+    <?php if ($this->level == 'level_1'): ?>
+    <section class="top-bar-section"><?php endif; ?>
+        <ul class="<?php if ($this->level != 'level_1'): ?>dropdown <?php else: ?>left <?php endif; ?>">
+            <?php foreach ($this->items as $item): ?>
+                <?php if ($item['isActive']): ?>
+
+                    <li<?php if ($item['class']): ?> class="<?php if ($item['subpages'] > 0): ?>has-dropdown <?php endif; ?><?php //echo $item['class']; ?>"<?php endif; ?>>
+                        <a href="<?php echo $item['href']; ?>"
+                           title="<?php echo $item['pageTitle'] ? $item['pageTitle'] : $item['title']; ?>"<?php if ($item['class']): ?> class="<?php echo $item['class']; ?>"<?php endif; ?><?php if ($item['accesskey'] != ''): ?> accesskey="<?php echo $item['accesskey']; ?>"<?php endif; ?><?php if ($item['tabindex']): ?> tabindex="<?php echo $item['tabindex']; ?>"<?php endif; ?><?php if ($item['nofollow']): ?> rel="nofollow"<?php endif; ?><?php echo $item['target']; ?>><?php echo $item['link']; ?></a><?php echo $item['subitems']; ?>
+                    </li>
+                <?php else: ?>
+                    <li<?php if ($item['class']): ?> class="<?php if ($item['subpages'] > 0): ?>has-dropdown <?php endif; ?><?php //echo $item['class']; ?>"<?php endif; ?>>
+                        <a href="<?php if($item['subpages'] > 0): ?>#<?php else: ?><?php echo $item['href']; ?><?php endif; ?>"
+                           title="<?php echo $item['pageTitle'] ? $item['pageTitle'] : $item['title']; ?>"<?php if ($item['class']): ?> class="<?php echo $item['class']; ?>"<?php endif; ?><?php if ($item['accesskey'] != ''): ?> accesskey="<?php echo $item['accesskey']; ?>"<?php endif; ?><?php if ($item['tabindex']): ?> tabindex="<?php echo $item['tabindex']; ?>"<?php endif; ?><?php if ($item['nofollow']): ?> rel="nofollow"<?php endif; ?><?php echo $item['target']; ?>><?php echo $item['link']; ?></a><?php echo $item['subitems']; ?>
+                    </li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
+        <?php if ($this->level == 'level_1'): ?></section><?php endif; ?>
+
+
+    <?php if ($this->level == 'level_1'): ?></div></div><?php endif; ?>
+
+
